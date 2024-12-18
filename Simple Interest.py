@@ -1,15 +1,17 @@
-def calculate_simple_interest(principal, rate, time):
-    # Simple Interest formula
-    simple_interest = (principal * rate * time) / 100
-    return simple_interest
+class SimpleInterest:
+    def __init__(self, principal, rate, time):
+        self.principal = principal
+        self.rate = rate
+        self.time = time
 
-# Given values
-principal_amount = 200  
-rate_of_interest = 5   
-time_period = 5         
+    def calculate_interest(self):
+        return (self.principal * self.rate * self.time) / 100
 
-# Calculate Simple Interest
-simple_interest = calculate_simple_interest(principal_amount, rate_of_interest, time_period)
 
-# Print the result
-print(f"The Simple Interest on Rs. {principal_amount} for {time_period} years at {rate_of_interest}% per year is Rs. {simple_interest}.")
+# Creating an object of the class
+principal = float(input("Enter the principal amount: "))
+rate = float(input("Enter the rate of interest: "))
+time = float(input("Enter the time (in years): "))
+
+si = SimpleInterest(principal, rate, time)  
+print(f"Simple Interest: {si.calculate_interest()}")
